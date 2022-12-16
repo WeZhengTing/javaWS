@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../../../lib/layui/css/layui.css"/>
+<style>
+    .main {
+        width: 1200px;
+        display: inline-block;
+        text-align: left;
+        height: 700px;
+        margin-top: 50px;
+
+    }
+
+    .main > .left {
+        width: 700px;
+        height: 680px;
+        float: left;
+        border: 1px solid black;
+        margin: 9px 9px 9px 19px;
+    }
+
+    .main > .right {
+        width: 430px;
+        height: 680px;
+        float: right;
+        border: 1px solid black;
+        margin: 9px 19px 9px 19px;
+        text-align: center;
+    }
+    .title{
+        height: 30px;
+        width: 400px;
+        display: inline-block;
+        margin:10px 0 ;
+        border: 1px solid black;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .layui-icon-size{
+        font-size:25px;
+    }
+    .chatView{
+        padding:10px ;
+        text-align:left ;
+        display: inline-block;
+        border: 1px solid black;
+        font-size: 18px;
+        width: 380px;
+        height: 480px;
+        overflow: auto;
+    }
+    .tool{
+        display: inline-block;
+        margin-top: 10px;
+        height: 95px;
+        width:400px ;
+        border: 1px solid black;
+
+    }
+    .chatInp{
+        width: 350px;
+        height: 30px;
+        font-size: 20px;
+        padding:0 10px ;
+        margin-top:8px ;
+    }
+    .btnTool{
+        margin-top:8px ;
+    }
+    .gameMain{
+        display: none;
+        text-align: center;
+    }
+    .other{
+        color: blue;
+        text-align: left;
+    }
+    .myself{
+        color: red;
+        text-align: right;
+    }
+    .line{
+        padding:3px 0;
+    }
+    .notice{
+        text-align: center;
+        margin: 5px 10%;
+        padding:5px 0;
+        background-color:#ccc ;
+        color: white;
+        border-radius: 50px;
+
+    }
+    .layui-table-cell{
+        height: auto;
+    }
+    #game {
+        border: 1px solid black;
+    }
+</style>
+<body style="text-align: center">
+<div class="main">
+    <div class="left">
+        <div class="playerList">
+            <table style="height: 100%;overflow:auto " id="list" lay-filter="list"></table>
+        </div>
+        <div class="gameMain">
+            <div>已方：<span id="myselfColor"></span>当前执子:<span id="color"></span></div>
+            <canvas id="game"></canvas>
+        </div>
+    </div>
+    <div class="right">
+        <div class="title">
+            房间名:<span id='roomName'>xxxx</span>
+            <span id="hasPwd"><i class="layui-icon layui-icon-size layui-icon-password"></i></span>
+        </div>
+        <div class="chatView" id="chatView">
+
+        </div>
+        <div class="tool">
+            <input id="inp" class="chatInp"/>
+            <div class="btnTool">
+                <button class="layui-btn" id="ready">准备</button>
+                <button id="outRoom" class="layui-btn layui-btn-danger">退出</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../../lib/jquery.js"></script>
+<script src="../../../lib/layui/layui.js"></script>
+<script src="../../../config.js"></script>
+<script src="../js/game.js"></script>
+<script src="../js/room.js"></script>
+</html>

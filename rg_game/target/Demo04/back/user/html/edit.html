@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../../../lib/layui/css/layui.css"/>
+<body style="padding: 20px 40px 0 0">
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-block">
+            <input type="text" name="username" disabled
+                   placeholder="请输入用户名"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">修改密码</label>
+        <div class="layui-input-block">
+            <input type="checkbox" lay-filter="isChange" lay-text="开|关" name="isChange" lay-skin="switch">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-block">
+            <input type="password" name="pwd"  disabled lay-verify="pwd" placeholder="请输入密码"
+                   autocomplete="off" class="layui-input layui-disabled">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">头像</label>
+        <div class="layui-input-block">
+            <input type="file"  name="headImg"  style="display: none">
+            <img id="headImg" src="../../../img/head.jpg" style="width: 200px;height: 200px; border-radius:100px"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户状态</label>
+        <div class="layui-input-block" id="userStatus">
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="edit">编辑</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+</body>
+<script src="../../../lib/jquery.js"></script>
+<script src="../../../lib/layui/layui.js"></script>
+<script src="../../../config.js"></script>
+<script src="../js/edit.js"></script>
+</html>
